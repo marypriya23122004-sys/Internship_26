@@ -5,12 +5,18 @@ Hardware-Based Hamming (7,4) Error Correction Auditor
 This repository contains the design and implementation of an ASIC Auditor designed to monitor the data integrity of microcontrollers and memory systems in real-time. The project follows a complete industry-standard ASIC design flow using 180nm CMOS technology.
 
 📋 Project Overview
-Microcontrollers in high-reliability environments (automotive, aerospace, medical) are susceptible to bit-flip errors caused by electrical noise or radiation. This project implements a dedicated hardware auditor that:
+
+Microcontrollers in high-reliability environments (automotive, aerospace, medical) are susceptible to bit-flip errors caused by electrical noise or radiation. 
+
+This project implements a dedicated hardware auditor that:
 
 1.Generates protected (7,4) Hamming codes from 4-bit data.
 2.Audits received data from a Microcontroller (MC).
 3.Identifies the exact bit-position of any single-bit error using syndrome decoding.
+
+
 🛠️ Technical Specifications
+
 .Technology Node: SCL 180nm CMOS
 .Algorithm: Hamming (7,4) Error Correction Code (ECC)
 .Clock Frequency: 100 MHz (10ns Period)
@@ -18,6 +24,8 @@ Microcontrollers in high-reliability environments (automotive, aerospace, medica
 .Power Consumption: 2.497 mW
 .Total Cell Count: 60
 .Timing Slack: +2.015 ns (MET)
+
+
 🏗️ Design Architecture
 The design is partitioned into three main Verilog modules:
 
@@ -34,6 +42,8 @@ An optimized 1-bit State Machine manages the operational flow, integrated with p
 
 .GEN (0): Active encoding of data.
 .CHECK (1): Active auditing of MCU response.
+
+
 🚀 ASIC Design Flow
 The project was executed using the Cadence Digital Design Suite:
 
@@ -45,12 +55,16 @@ The project was executed using the Cadence Digital Design Suite:
 6.Clock Tree Synthesis (CTS): Synchronized internal flip-flops with minimal skew.
 7.Routing: Completed global and detailed routing of all signal nets.
 8.Signoff: Verified timing, area, and power reports.
+
+
 📊 Physical Design Details
+
 A unique feature of this ASIC is its Pad-Limited nature. To maintain a near-square aspect ratio, a custom pad distribution was calculated:
 
 .3 Sides: 11 pads each (60μm spacing).
 .1 Side: 12 pads (50μm spacing).
 .Total Perimeter: Integrated 49 physical pads to allow real-world interfacing with external hardware.
+
 👥 Team Members (Team 9)
 .Aardra S V
 .G Mary Priya
